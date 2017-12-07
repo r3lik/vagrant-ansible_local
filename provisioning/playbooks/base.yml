@@ -7,18 +7,6 @@
         name: '*'
         state: latest
 
-#    - name: Install latest version of Apache
-#      yum:
-#        name: httpd
-#        state: latest
-#      notify:
-#      - restart httpd
-
-#    - name: Ensure Apache is running
-#      service:
-#        name: httpd
-#        state: started
-
     - name: Install "Development tools" package group
       yum:
         name: "@Development tools"
@@ -28,9 +16,8 @@
       yum:
         name: net-tools
         state: present 
-
-#  handlers:
-#    - name: restart httpd
-#      service:
-#        name: httpd
-#        state: restarted 
+   
+    - name: Install "Vim"
+      yum:
+        name: vim-enhanced 
+        state: present
