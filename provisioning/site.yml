@@ -1,4 +1,8 @@
 ---
 # file: site.yml
+
+# installs the bare necessities, including docker
 - import_playbook: playbooks/base.yml
-- import_playbook: playbooks/docker.yml
+
+# provisions docker container  
+#- import_playbook: playbooks/docker.yml

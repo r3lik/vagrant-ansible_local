@@ -1,23 +1,37 @@
 ---
+# Installs the bare necessities :)
+
 - hosts: all
   become: yes
   tasks:
-    - name: Upgrade all packages
+    - name: yum upgrade all packages
       yum:
         name: '*'
         state: latest
 
-    - name: Install "Development tools" package group
+    - name: yum install "Development tools" package group
       yum:
         name: "@Development tools"
         state: present
 
-    - name: Install "Net Tools"
+    - name: yum install "Net Tools"
       yum:
         name: net-tools
         state: present 
    
-    - name: Install "Vim"
+    - name: yum install "Vim"
       yum:
         name: vim-enhanced 
         state: present
+  
+    - name: yum install "wget"
+      yum:
+        name: wget 
+        state: present
+ 
+    - name: pip install "docker-py"
+      pip:
+        name: docker-py
+
+  roles:
+    - docker-base
