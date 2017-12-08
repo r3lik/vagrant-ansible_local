@@ -5,3 +5,9 @@
     image: busybox
     volumes:
       - /data
+    state: started
+
+- name: Start r3lik 
+  docker_container:
+    name: r3lik
+    image: r3lik/catnip
