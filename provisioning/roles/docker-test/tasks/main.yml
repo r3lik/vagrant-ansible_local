@@ -11,3 +11,4 @@
   docker_container:
     name: r3lik
     image: r3lik/catnip
+    published_ports: 0.0.0.0:1337:5000
