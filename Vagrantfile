@@ -1,9 +1,13 @@
 Vagrant.configure("2") do |config|
   config.vm.box = "centos/7"
-  config.vm.network "forwarded_port", guest: 1337, host: 6969
-  config.vm.hostname = "dev-env.vagrant"
-  config.vm.synced_folder "storage/", "/vagrant/storage", create: true
+  config.vm.hostname = "centos7-vagrant"
+  #config.vm.synced_folder "storage/", "/vagrant/storage", create: true
   
+config.vm.provider "virtualbox" do |v|   
+  v.memory = 4098   
+  v.cpus = 10 
+end
+
   # -= ANSIBLE =-
   # Use :ansible or :ansible_local to provision
   config.vm.provision :ansible_local do |ansible|

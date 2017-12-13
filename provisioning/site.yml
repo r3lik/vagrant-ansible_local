@@ -4,5 +4,5 @@
 # installs the bare necessities, including docker
 - import_playbook: playbooks/base.yml
 
-# provisions docker container  
-- import_playbook: playbooks/docker-test.yml
+# provisions docker test container  
+#- import_playbook: playbooks/docker-test.yml
